@@ -2,5 +2,6 @@
     <string name="app_name">Lab06</string>
     <string name="go_to_url">GO TO URL</string>
     <string name="go_to_add">GO TO ADD</string>
+    <string name="go_to_data">GO TO DATA</string>
 
 </resources>
