@@ -24,6 +24,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnData.setOnClickListener {
+
+            val uri: Uri = Uri.parse(txtResult.text.toString() + "/data")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+
+        }
+
         btnAdd.setOnClickListener {
 
             val uri: Uri = Uri.parse(txtResult.text.toString() + "/add")
