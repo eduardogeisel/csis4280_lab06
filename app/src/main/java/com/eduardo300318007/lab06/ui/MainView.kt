@@ -23,12 +23,12 @@ class MainView (ctx : Activity, fileName: String){
 
 
 
-        // Using data class Employee
+
         val moshi: Moshi = Moshi.Builder().build()
         val adapter : JsonAdapter<List<url>> = moshi.adapter(myType)
         val empList = adapter.fromJson(text)
 
-        // ?: Elvis Operator
+
         for (e in empList ?: emptyList() ) {
 
             ctx.txtResult.append("${e.url}${e.port}\n")
