@@ -1,8 +1,8 @@
 package com.eduardo300318007.lab06
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import com.eduardo300318007.lab06.ui.MainView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,28 +16,22 @@ class MainActivity : AppCompatActivity() {
         txtResult.setText("")
         val mv = MainView(this, FILENAME)
 
-        btnUrl.setOnClickListener {
-
+        btnShowWeb.setOnClickListener {
             val uri: Uri = Uri.parse(txtResult.text.toString())
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
-
+            val myWebView: WebView = findViewById(R.id.webview)
+            myWebView.loadUrl(txtResult.text.toString())
         }
 
         btnData.setOnClickListener {
-
             val uri: Uri = Uri.parse(txtResult.text.toString() + "/data")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
-
+            val myWebView: WebView = findViewById(R.id.webview)
+            myWebView.loadUrl(txtResult.text.toString() + "/data")
         }
 
         btnAdd.setOnClickListener {
-
             val uri: Uri = Uri.parse(txtResult.text.toString() + "/add")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
-
+            val myWebView: WebView = findViewById(R.id.webview)
+            myWebView.loadUrl(txtResult.text.toString() + "/add")
         }
     }
 }
